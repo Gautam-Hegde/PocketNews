@@ -27,9 +27,10 @@ const Header = () => {
 const url="https://user-images.githubusercontent.com/85569489/181305542-6e0fc800-7f37-4f74-b42a-5171def5fbad.png";
 
 return (
-    <StyledHeader>
+    <StyledHeader position='static'>
          <Toolbar> 
             <StyledMenu/>
+            
             <Image src={url} alt="logo" />
         </Toolbar>
     </StyledHeader>
