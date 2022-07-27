@@ -11,7 +11,7 @@ const Container = styled(Box)`
 
 const Text = styled(Typography)`
    font-weight: bold;
-   margin-left: 7px;
+   margin:auto;
 
 
 `;
