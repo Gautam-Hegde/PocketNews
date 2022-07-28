@@ -7,6 +7,7 @@ const Container = styled(Box)`
     color: #fff;
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 `;
 
 const Text = styled(Typography)`
