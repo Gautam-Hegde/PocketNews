@@ -31,6 +31,25 @@ font-size:12px;
 line-height:27px;
 `;
 
+const RightContainer=styled(Grid)(({theme})=>({
+margin: "5px 0 0 -25px",
+display:"flex",
+flexDirection:"column",
+[theme.breakpoints.between('sm','lg')]: {
+    padding:'0 5px',
+},
+[theme.breakpoints.down('sm')]: {
+    margin:"5px 0"
+},
+}));
+
+const Description=styled(Typography)`
+line-height:22px;
+margin-top:7px;
+`;
+
+
+
 
 const Article =({data})=>{
 
@@ -42,12 +61,18 @@ const Article =({data})=>{
                 <Grid lg={5} sm={5} xs={12} item>
                     <Image src={data.url}/>
                 </Grid>
-                <Grid lg={7} md={7} sm={7} xs={12} item>
+                <RightContainer lg={7} md={7} sm={7} xs={12} item>
                     <Text>{data.title}</Text>
                     <Text1>
-                        <i>Pocket by {data.author}</i>
+                        <i>Pocket by {data.author}</i> / {new Date(data.timestamp).toDateString()}
                     </Text1>
-                </Grid>
+                    <Typography>
+                        {data.description}
+                    </Typography>
+                    <Typography>
+                        <b>Read more...</b><a href='{data.link}' target="_blank"><i>{data.publisher}</i></a>
+                    </Typography>
+                </RightContainer>
             </Grid>
            
         </Container>

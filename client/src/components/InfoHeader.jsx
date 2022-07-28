@@ -2,19 +2,21 @@ import React from 'react'
 import { Box,Typography,styled } from '@mui/material'
 
 
-const Container = styled(Box)`
-    background-color: #ffa3f9;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-`;
+//handling s screen size theme (boom baam😂)
+const Container = styled(Box)(({theme})=>({
+    backgroundColor: "#ffa3f9",
+    color: "#fff",
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "30",
+    // [theme.breakpoints.down('md')]: {
+    //   display:'none'
+    // }
+}));
 
 const Text = styled(Typography)`
    font-weight: bold;
    margin:auto;
-
-
 `;
 
 const InfoHeader = () => {

@@ -11,12 +11,14 @@ app.use(cors());
 
 app.use('/',Route);
 
-const PORT=8000;
+const PORT=  process.env.PORT || 8000;
 
 const username=process.env.DB_USERNAME;
 const password=process.env.DB_PASSWORD;
 
-Connection(username,password);
+const URL= process.env.MONGODB_URI || `mongodb://${username}:${password}@ac-1kvrpcu-shard-00-00.gulbrzn.mongodb.net:27017,ac-1kvrpcu-shard-00-01.gulbrzn.mongodb.net:27017,ac-1kvrpcu-shard-00-02.gulbrzn.mongodb.net:27017/?ssl=true&replicaSet=atlas-d9no94-shard-0&authSource=admin&retryWrites=true&w=majority`
+
+Connection(URL);
 
 app.listen(PORT,()=>{console.log(`Server is running on port ${PORT}`)});
 
